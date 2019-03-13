@@ -18,6 +18,7 @@ function setup() {
   player = new Sprite(100, 100, 64, 64, 'red');
   goal = new Sprite(200, 100, 128, 64, 'green');
   terrain = new Terrain();
+  textSize(60);
 
 
   //is it less than 6 pm and greater than 6 am
@@ -76,16 +77,21 @@ function draw() {
 
   terrain.display();
 
-
   fill('white');
-  textSize(60);
-	text('Kenz and CJ!', windowWidth / 2 - 200, 60);
+  text('Kenz and CJ!', windowWidth / 2 - 200, 60);
 
 }
 
 function windowResized() {
-  terrain = new Terrain();
-  sky = new Sky(100, 8);
+
+  
   resizeCanvas(windowWidth - 10, windowHeight - 10);
+
+  terrain = new Terrain();
+  sky = new Sky(100, 8, hr);
+  
+  fill('white');
+  text('Kenz and CJ!', windowWidth / 2 - 200, 60);
+
 }
 
