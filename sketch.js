@@ -76,6 +76,11 @@ function draw() {
 
   terrain.display();
 
+
+  fill('white');
+  textSize(60);
+	text('Kenz and CJ!', windowWidth / 2 - 200, 60);
+
 }
 
 function windowResized() {
