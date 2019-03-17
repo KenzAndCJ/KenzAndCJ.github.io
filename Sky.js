@@ -1,13 +1,14 @@
 class Sky
 {
-    constructor(numStars, maxSize, hour)
+    constructor(numStars, maxSize, hour, isNight)
     {
-        this.numStars = numStars; 
+        this.numStars = numStars;
         this.maxSize = maxSize;
         this.stars = [];
-        this.moon = new Moon(hour);
+        this.moon = new Moon(hour, isNight);
+        this.isNight = isNight;
 
-        for(let i = 0; i < numStars; i++)
+        for (let i = 0; i < numStars; i++)
         {
             this.stars.push(new Star(maxSize));
         }
@@ -15,12 +16,20 @@ class Sky
 
     display()
     {
-        for(let s of this.stars)
-        {
-            s.display();
-        }
 
-        this.moon.display();
+
+        // if (this.isNight)
+        // {
+
+            for (let s of this.stars)
+            {
+               s.display();
+           }
+
+            this.moon.display();
+
+        //}
+
     }
 }
 
@@ -31,7 +40,7 @@ class Star
     {
         this.x = random(0, windowWidth);
         this.y = random(0, windowHeight - 100);
-        this.size = random(1, max);        
+        this.size = random(1, max);
     }
 
     display()
@@ -39,8 +48,8 @@ class Star
         push();
 
         fill('white');
-        ellipse(this.x, this.y, this.size, this.size);     
-        
+        ellipse(this.x, this.y, this.size, this.size);
+
         pop();
     }
 }
