@@ -118,15 +118,22 @@ function draw()
 
 			enviro.display();
 
+
+			if (cscjButton.state.state === cscjButton.state.released)
+			{
+				window.location.href = 'cscj.html';
+			}
+			if (kenzButton.state.state === kenzButton.state.released)
+			{
+				window.location.href = 'kenz.html';
+			}
+
 			cscjButton.display();
 
 			kenzButton.display();
-			/*
-			if (aboutButton.state.state == aboutButton.state.released)
-			{
-				sm.changeState(States.About);
-			}
-*/
+
+	
+
 			if (containsMouse(
 				enviro.sky.moon.posX - (enviro.sky.moon.img.width * enviro.sky.moon.scale) / 2,
 				enviro.sky.moon.posY + enviro.sky.moon.midnightDistFromTop,

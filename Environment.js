@@ -14,7 +14,7 @@ class Environment
         background(this.backgroundColor);
 
         this.terrain = new Terrain();;
-        this.sky = new Sky(100, 8, this.hr, this.isNight);;
+        this.sky = new Sky(100, 8, 14, this.hr, this.isNight);;
     }
 
     display()
