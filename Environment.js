@@ -3,7 +3,7 @@ class Environment
 
     constructor()
     {
-		this.tempHr = 9;
+		this.tempHr = hour();
         this.hr = this.tempHr >= 18 || this.tempHr <= 6 ? this.tempHr: (this.tempHr + 12)%24;
         var realHr = hour();
 		this.isNight = (this.tempHr >= 18 || this.tempHr <= 6);
