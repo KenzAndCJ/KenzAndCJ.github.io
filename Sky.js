@@ -17,7 +17,7 @@ class Sky
 
         for (let i = 0; i < numClouds; i++)
         {
-            this.clouds.push(new Cloud(3));
+            this.clouds.push(new Cloud(7));
         }
     }
 
@@ -75,17 +75,18 @@ class Cloud
     constructor(cloudOptions)
     {
         this.x = random(0, windowWidth);
-        this.y = random(0,windowHeight - 300);
-        this.scale = random(0.5,2);
+        this.y = random(0,windowHeight);
+        this.scale = random(0.5,0.8);
         var cn = random(0, cloudOptions-1);
         this.img = createImg('assets/cloud' + Math.round(cn) + '.png');
+        this.img.hide();
     }
 
     display()
     {        
         image(this.img, 
             this.x - ((this.img.width * this.scale)/2),
-            this.y,
+            this.y - ((this.img.height * this.scale)/2) - (100 ),
             this.img.width * this.scale, 
             this.img.height * this.scale);
 
